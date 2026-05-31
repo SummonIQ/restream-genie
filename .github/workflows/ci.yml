@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup frontend runtime
+        run: echo "Install Bun or Node dependencies"
+      - name: Setup Rust
+        run: echo "Install Rust"
+      - name: Install browsers
+        run: echo "Install Playwright browsers if needed"
+      - name: Verify
+        run: <VERIFY_COMMAND>
+
